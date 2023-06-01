@@ -10,8 +10,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 require('./config/db');
-// Mongodb connection
-// connectEb()
+
 // rest object
 const app = express();
 app.use(
@@ -22,11 +21,11 @@ app.use(
     }),
   );
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(express.json());
-// app.use(morgan('dev'));
+
 // routes
 app.use('/', userRouter);
+
 // port
 const port = process.env.PORT || 8080;
 
